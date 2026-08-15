@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { typedndarray } from '@stdlib/types/ndarray';
 
 /**
-* Return the first index of an element in a one-dimensional ndarray which is not equal to a specified search element.
+* Returns the first index of an element in a one-dimensional ndarray which is not equal to a specified search element.
 *
-* @module @stdlib/blas-ext-base-ndarray-gindex-of-not-equal
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray containing the search element.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns index
 *
 * @example
 * var vector = require( '@stdlib/ndarray-vector-ctor' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var gindexOfNotEqual = require( '@stdlib/blas-ext-base-ndarray-gindex-of-not-equal' );
 *
 * var x = vector( [ 1.0, 1.0, 3.0 ], 'generic' );
 *
@@ -37,12 +48,9 @@
 * var v = gindexOfNotEqual( [ x, searchElement ] );
 * // returns 2
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function gindexOfNotEqual( arrays: [ typedndarray<unknown>, typedndarray<unknown> ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = gindexOfNotEqual;
