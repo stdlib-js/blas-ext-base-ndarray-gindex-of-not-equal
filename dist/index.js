@@ -1,5 +1,32 @@
-"use strict";var u=function(e,r){return function(){try{return r||e((r={exports:{}}).exports,r),r.exports}catch(t){throw (r=0, t)}};};var a=u(function(l,i){
-var n=require('@stdlib/ndarray-base-numel-dimension/dist'),s=require('@stdlib/ndarray-base-stride/dist'),q=require('@stdlib/ndarray-base-offset/dist'),v=require('@stdlib/ndarray-base-data-buffer/dist'),d=require('@stdlib/blas-ext-base-gindex-of-not-equal/dist').ndarray,o=require('@stdlib/ndarray-base-ndarraylike2scalar/dist');function c(e){var r=e[0];return d(n(r,0),o(e[1]),v(r),s(r,0),q(r))}i.exports=c
-});var f=a();module.exports=f;
 /** @license Apache-2.0 */
-//# sourceMappingURL=index.js.map
+
+'use strict';
+
+/**
+* Return the first index of an element in a one-dimensional ndarray which is not equal to a specified search element.
+*
+* @module @stdlib/blas-ext-base-ndarray-gindex-of-not-equal
+*
+* @example
+* var vector = require( '@stdlib/ndarray-vector-ctor' );
+* var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+* var gindexOfNotEqual = require( '@stdlib/blas-ext-base-ndarray-gindex-of-not-equal' );
+*
+* var x = vector( [ 1.0, 1.0, 3.0 ], 'generic' );
+*
+* var searchElement = scalar2ndarray( 1.0, {
+*     'dtype': 'generic'
+* });
+*
+* var v = gindexOfNotEqual( [ x, searchElement ] );
+* // returns 2
+*/
+
+// MODULES //
+
+var main = require( './main.js' );
+
+
+// EXPORTS //
+
+module.exports = main;
