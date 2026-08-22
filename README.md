@@ -83,7 +83,11 @@ var searchElement = scalar2ndarray( 1.0, {
     'dtype': 'generic'
 });
 
-var idx = gindexOfNotEqual( [ x, searchElement ] );
+var fromIndex = scalar2ndarray( 0, {
+    'dtype': 'generic'
+});
+
+var idx = gindexOfNotEqual( [ x, searchElement, fromIndex ] );
 // returns 2
 ```
 
@@ -93,6 +97,7 @@ The function has the following parameters:
 
     -   a one-dimensional input ndarray.
     -   a zero-dimensional ndarray containing the search element.
+    -   a zero-dimensional ndarray containing the index from which to begin searching.
 
 If the function is unable to find an element which is not equal to a specified search element, the function returns `-1`.
 
@@ -106,7 +111,11 @@ var searchElement = scalar2ndarray( 1.0, {
     'dtype': 'generic'
 });
 
-var idx = gindexOfNotEqual( [ x, searchElement ] );
+var fromIndex = scalar2ndarray( 0, {
+    'dtype': 'generic'
+});
+
+var idx = gindexOfNotEqual( [ x, searchElement, fromIndex ] );
 // returns -1
 ```
 
@@ -118,6 +127,7 @@ var idx = gindexOfNotEqual( [ x, searchElement ] );
 
 ## Notes
 
+-   If a specified starting search index is negative, the function resolves the starting search index by counting backward from the last element (where `-1` refers to the last element).
 -   When searching for a search element, the function checks for inequality using the strict inequality operator `!==`. As a consequence, `NaN` values are considered distinct from all values (including other `NaN` values), and `-0` and `+0` are considered the same.
 
 </section>
@@ -147,7 +157,12 @@ console.log( ndarray2array( x ) );
 var searchElement = scalar2ndarray( 0, opts );
 console.log( 'Search Element:', ndarraylike2scalar( searchElement ) );
 
-var idx = gindexOfNotEqual( [ x, searchElement ] );
+var fromIndex = scalar2ndarray( 0, {
+    'dtype': 'generic'
+});
+console.log( 'From Index:', ndarraylike2scalar( fromIndex ) );
+
+var idx = gindexOfNotEqual( [ x, searchElement, fromIndex ] );
 console.log( idx );
 ```
 
@@ -181,6 +196,11 @@ For more information on the project, filing bug reports and feature requests, an
 [![Chat][chat-image]][chat-url]
 
 ---
+
+## License
+
+See [LICENSE][stdlib-license].
+
 
 ## Copyright
 
@@ -227,6 +247,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [esm-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-gindex-of-not-equal/tree/esm
 [esm-readme]: https://github.com/stdlib-js/blas-ext-base-ndarray-gindex-of-not-equal/blob/esm/README.md
 [branches-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-gindex-of-not-equal/blob/main/branches.md
+
+[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ndarray-gindex-of-not-equal/main/LICENSE
 
 </section>
 
