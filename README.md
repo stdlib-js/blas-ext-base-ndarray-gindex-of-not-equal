@@ -41,32 +41,14 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-ext-base-ndarray-gindex-of-not-equal
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var gindexOfNotEqual = require( '@stdlib/blas-ext-base-ndarray-gindex-of-not-equal' );
+import gindexOfNotEqual from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-gindex-of-not-equal@esm/index.mjs';
 ```
 
 #### gindexOfNotEqual( arrays )
@@ -74,8 +56,8 @@ var gindexOfNotEqual = require( '@stdlib/blas-ext-base-ndarray-gindex-of-not-equ
 Returns the first index of an element in a one-dimensional ndarray which is not equal to a specified search element.
 
 ```javascript
-var vector = require( '@stdlib/ndarray-vector-ctor' );
-var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+import vector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-ctor@esm/index.mjs';
+import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
 
 var x = vector( [ 1.0, 1.0, 3.0 ], 'generic' );
 
@@ -102,8 +84,8 @@ The function has the following parameters:
 If the function is unable to find an element which is not equal to a specified search element, the function returns `-1`.
 
 ```javascript
-var vector = require( '@stdlib/ndarray-vector-ctor' );
-var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+import vector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-ctor@esm/index.mjs';
+import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
 
 var x = vector( [ 1.0, 1.0, 1.0 ], 'generic' );
 
@@ -140,12 +122,17 @@ var idx = gindexOfNotEqual( [ x, searchElement, fromIndex ] );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var discreteUniform = require( '@stdlib/random-discrete-uniform' );
-var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
-var ndarraylike2scalar = require( '@stdlib/ndarray-ndarraylike2scalar' );
-var gindexOfNotEqual = require( '@stdlib/blas-ext-base-ndarray-gindex-of-not-equal' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-discrete-uniform@esm/index.mjs';
+import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
+import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
+import ndarraylike2scalar from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ndarraylike2scalar@esm/index.mjs';
+import gindexOfNotEqual from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-gindex-of-not-equal@esm/index.mjs';
 
 var opts = {
     'dtype': 'generic'
@@ -164,6 +151,10 @@ console.log( 'From Index:', ndarraylike2scalar( fromIndex ) );
 
 var idx = gindexOfNotEqual( [ x, searchElement, fromIndex ] );
 console.log( idx );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -187,7 +178,7 @@ console.log( idx );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
